@@ -43,7 +43,7 @@ def post_comentario(bar_id: int, datos: dict):
 
 # TODO: implementar GET /bares/{bar_id}/eventos
 # Debe retornar todos los eventos del bar desde la colección 'eventos'
-@app.get('/bares/{bar_id}/eventos}')
+@app.get('/bares/{bar_id}/eventos')
 def get_eventos(bar_id: int):
     eventos = list(db["eventos"].find({"bar_id": bar_id}, {"_id": 0}))
     return eventos or []
